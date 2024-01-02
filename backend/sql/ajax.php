@@ -36,20 +36,20 @@ function getCommunes($regionId) {
 
     if (empty($provinceIds)) {
         echo '<option value="">No hay comunas disponibles</option>';
-    else{
-        // Construir la lista de IDs de provincias para la consulta
-        $provinceIdsList = implode(',', $provinceIds);
+        return;
+    }
 
-        // Obtener comunas asociadas a las provincias
-        $stmt = $pdo->prepare("SELECT * FROM comunas WHERE provincia_id IN ($provinceIdsList)");
-        $stmt->execute();
-        $communes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Construir la lista de IDs de provincias para la consulta
+    $provinceIdsList = implode(',', $provinceIds);
 
-        $options = '<option value="">Seleccionar Comuna</option>';
-        foreach ($communes as $comuna) {
-         $options .= '<option value="' . $comuna['id'] . '">' . $comuna['comuna'] . '</option>';
-            }
-        }
+    // Obtener comunas asociadas a las provincias
+    $stmt = $pdo->prepare("SELECT * FROM comunas WHERE provincia_id IN ($provinceIdsList)");
+    $stmt->execute();
+    $communes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $options = '<option value="">Seleccionar Comuna</option>';
+    foreach ($communes as $comuna) {
+        $options .= '<option value="' . $comuna['id'] . '">' . $comuna['comuna'] . '</option>';
     }
 
     echo $options;
