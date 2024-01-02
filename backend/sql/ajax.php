@@ -11,7 +11,7 @@ if (isset($_POST['action'])) {
     }
 }
 
-function getRegions() {
+function getRegions():void {
     global $pdo;
     $stmt = $pdo->prepare("SELECT * FROM regiones");
     $stmt->execute();
@@ -25,7 +25,7 @@ function getRegions() {
     echo $options;
 }
 
-function getCommunes($regionId) {
+function getCommunes($regionId):void {
     global $pdo;
     
     // Obtener ID de provincias asociadas a la región
