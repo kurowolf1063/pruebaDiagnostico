@@ -1,0 +1,74 @@
+-------------------------------------------------
+Instalación del Proyecto de Votación - LEEME.txt
+-------------------------------------------------
+
+**Versión de PHP:** 8.0.30
+**Versión de Base de Datos:** MySQL (utilizando phpMyAdmin 5.2.1)
+
+--------------------
+Pasos de Instalación
+--------------------
+
+**Paso 1: Configuración del Servidor Web (Apache)**
+
+1. Asegúrate de tener Apache instalado en tu servidor.
+2. Configura el documento raíz del servidor web para apuntar al directorio del proyecto.
+
+**Paso 2: Configuración de PHP**
+
+1. Asegúrate de tener PHP 8.0.30 instalado en tu servidor.
+2. Verifica la configuración de PHP para cumplir con los requisitos del proyecto.
+
+**Paso 3: Configuración de la Base de Datos (MySQL con phpMyAdmin)**
+
+1. Instala y configura MySQL en tu servidor.
+2. Importa el archivo de base de datos proporcionado (`miproyecto.sql`) en phpMyAdmin.
+3. Configura las credenciales de conexión a la base de datos en el archivo `db.php`.
+
+**Paso 4: Configuración de Directorios y Archivos**
+
+1. Asegúrate de que los archivos del proyecto estén ubicados en el directorio correcto del servidor web.
+2. Verifica los permisos de lectura y escritura en los directorios y archivos según sea necesario.
+
+**Paso 5: Acceso al Proyecto**
+
+1. Abre el navegador web e ingresa la URL del proyecto en la barra de direcciones.
+
+-----------------------------------------------
+Información de la Base de Datos y Tablas
+-----------------------------------------------
+
+**Nombre de la Base de Datos:** miproyecto
+
+**contraseña:** no ingresada (al insertar contraseña debe modificar archivo de conexion db.php)
+
+**Tablas y Columnas:**
+
+1. **Tabla: comunas**
+   - Columnas: id, comuna
+
+2. **Tabla: regiones**
+   - Columnas: id, region
+
+3. **Tabla: provincias**
+   - Columnas: id, provincia, region_id
+
+4. **Tabla: candidatos**
+   - Columnas: id, candidato
+
+5. **Tabla: votos**
+   - Columnas: id, nombre, alias, rut, email, region, comuna, candidato, como_se_entero
+
+-----------------------------------------------
+Notas Adicionales y Problemas Comunes
+-----------------------------------------------
+
+- Si encuentras problemas durante la instalación, consulta los logs de error del servidor y phpMyAdmin para obtener información detallada.
+
+- Asegúrate de haber configurado correctamente las rutas y URLs en el proyecto.
+
+- Si hay problemas con la base de datos, verifica las credenciales y los permisos de usuario.
+
+- Para cualquier problema técnico, consulta la documentación del servidor web, PHP y phpMyAdmin.
+
+¡Gracias por utilizar proyecto de votación!
